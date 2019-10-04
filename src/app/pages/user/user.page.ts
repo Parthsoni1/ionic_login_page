@@ -9,7 +9,7 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['./user.page.scss'],
 })
 export class UserPage implements OnInit {
-  
+
   public appPages = [
     {
       title: 'Home',
@@ -17,8 +17,8 @@ export class UserPage implements OnInit {
       icon: 'home'
     },
     {
-      title: 'List',
-      url: '/list',
+      title: 'Complain Box',
+      url: '/complain',
       icon: 'list'
     }
   ];
