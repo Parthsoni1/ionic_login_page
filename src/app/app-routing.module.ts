@@ -9,7 +9,10 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
-  }
+  },
+  { path: 'user', loadChildren: './pages/user/user.module#UserPageModule' },
+  { path: 'user-detail', loadChildren: './pages/user-detail/user-detail.module#UserDetailPageModule' },
+  { path: 'complain-box', loadChildren: './pages/complain-box/complain-box.module#ComplainBoxPageModule' }
 ];
 @NgModule({
   imports: [
