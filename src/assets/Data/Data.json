@@ -1,0 +1,20 @@
+{
+    "Department": [
+        {
+            "MCA": [
+                {
+                    "Sem1": [
+                        {
+                            "Students": [
+                                {
+                                    "enroll_no": 1,
+                                    "name": "Radhika Soni"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
