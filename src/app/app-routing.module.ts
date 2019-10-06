@@ -12,7 +12,8 @@ const routes: Routes = [
   },
   { path: 'user', loadChildren: './pages/user/user.module#UserPageModule' },
   { path: 'user-detail', loadChildren: './pages/user-detail/user-detail.module#UserDetailPageModule' },
-  { path: 'complain-box', loadChildren: './pages/complain-box/complain-box.module#ComplainBoxPageModule' }
+  { path: 'complain-box', loadChildren: './pages/complain-box/complain-box.module#ComplainBoxPageModule' },  { path: 'time-table', loadChildren: './pages/time-table/time-table.module#TimeTablePageModule' }
+
 ];
 @NgModule({
   imports: [

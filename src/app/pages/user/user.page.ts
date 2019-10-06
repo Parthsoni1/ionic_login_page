@@ -20,7 +20,13 @@ export class UserPage implements OnInit {
       title: 'Complain Box',
       url: '/complain',
       icon: 'list'
-    }
+    },
+    {
+      title: 'Time Table',
+      url: '/timetable',
+      icon: 'list'
+    },
+    
   ];
 
   constructor(private menu: MenuController,

@@ -1,0 +1,137 @@
+{
+    "Monday": [
+        {
+            "time": "10-11" ,
+            "Subject":"DAA",
+            "Professor":"SandeepBhai"
+        },
+        {
+            "time": "11-12" ,
+            "Subject":"SE",
+            "Professor":"deep"
+        },
+        {
+            "time": "12-1" ,
+            "Subject":"ML",
+            "Professor":"Sanjay"
+        },
+        {
+            "time": "2-3" ,
+            "Subject":"DAA-Prac",
+            "Professor":"SandeepBhai"
+        },
+        {
+            "time": "3-4" ,
+            "Subject":"SEprac",
+            "Professor":"Deep"
+        }
+    ],
+    "Tuesday": [
+        {
+            "time": "10-11" ,
+            "Subject":"DAA",
+            "Professor":"SandeepBhai"
+        },
+        {
+            "time": "11-12" ,
+            "Subject":"SE",
+            "Professor":"deep"
+        },
+        {
+            "time": "12-1" ,
+            "Subject":"ML",
+            "Professor":"Sanjay"
+        },
+        {
+            "time": "2-3" ,
+            "Subject":"DAA-Prac",
+            "Professor":"SandeepBhai"
+        },
+        {
+            "time": "3-4" ,
+            "Subject":"SEprac",
+            "Professor":"Deep"
+        }
+    ],
+    "Wednesday": [
+        {
+            "time": "10-11" ,
+            "Subject":"DAA",
+            "Professor":"SandeepBhai"
+        },
+        {
+            "time": "11-12" ,
+            "Subject":"SE",
+            "Professor":"deep"
+        },
+        {
+            "time": "12-1" ,
+            "Subject":"ML",
+            "Professor":"Sanjay"
+        },
+        {
+            "time": "2-3" ,
+            "Subject":"DAA-Prac",
+            "Professor":"SandeepBhai"
+        },
+        {
+            "time": "3-4" ,
+            "Subject":"SEprac",
+            "Professor":"Deep"
+        }
+    ],
+    "Thursday": [
+        {
+            "time": "10-11" ,
+            "Subject":"DAA",
+            "Professor":"SandeepBhai"
+        },
+        {
+            "time": "11-12" ,
+            "Subject":"SE",
+            "Professor":"deep"
+        },
+        {
+            "time": "12-1" ,
+            "Subject":"ML",
+            "Professor":"Sanjay"
+        },
+        {
+            "time": "2-3" ,
+            "Subject":"DAA-Prac",
+            "Professor":"SandeepBhai"
+        },
+        {
+            "time": "3-4" ,
+            "Subject":"SEprac",
+            "Professor":"Deep"
+        }
+    ],
+    "Friday": [
+        {
+            "time": "10-11" ,
+            "Subject":"DAA",
+            "Professor":"SandeepBhai"
+        },
+        {
+            "time": "11-12" ,
+            "Subject":"SE",
+            "Professor":"deep"
+        },
+        {
+            "time": "12-1" ,
+            "Subject":"ML",
+            "Professor":"Sanjay"
+        },
+        {
+            "time": "2-3" ,
+            "Subject":"DAA-Prac",
+            "Professor":"SandeepBhai"
+        },
+        {
+            "time": "3-4" ,
+            "Subject":"SEprac",
+            "Professor":"Deep"
+        }
+    ]
+}

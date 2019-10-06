@@ -34,6 +34,12 @@ const routes: Routes = [
                 )
             },
             {
+                path: 'timetable',
+                loadChildren: () => import('../pages/time-table/time-table.module').then(
+                    m => m.TimeTablePageModule
+                )
+            },
+            {
                 path: 'complain',
                 loadChildren: () => import('../pages/complain-box/complain-box.module').then(
                     m => m.ComplainBoxPageModule

@@ -6,7 +6,7 @@ const path = require('path');
 
 const app = express();
 
-// const route = require('./route/routes');
+const route = require('./routes/routes');
 
 //connect to mongoDB
 mongoose.connect('mongodb://localhost:27017/Collage');
@@ -15,7 +15,7 @@ mongoose.connect('mongodb://localhost:27017/Collage');
 mongoose.connection.on('connected',()=>{
     console.log('connected to database @27017');
 });
-mongoose.connection.on('error',(err)=>{ 
+mongoose.connection.on('error',(err)=>{  
     if(err){
         console.log('error in database connection' +err);
     }
@@ -39,7 +39,7 @@ var allowCrossDomain = function(req, res, next) {
 app.use(allowCrossDomain);
 
 //routes
-// app.use('/api',route);
+app.use('/collage',route);
 
 //static file
 app.use(express.static(path.join(__dirname,'html')));
