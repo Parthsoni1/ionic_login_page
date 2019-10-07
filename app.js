@@ -22,7 +22,7 @@ mongoose.connection.on('error',(err)=>{
 });
 
 //port
-const port = 3000;
+const port = 3001;
 //middleware cors
 app.use(cors({ Origin:'http://localhost:4200' })); 
 //body parser

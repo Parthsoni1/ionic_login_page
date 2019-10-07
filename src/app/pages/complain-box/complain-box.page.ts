@@ -18,8 +18,8 @@ export class ComplainBoxPage implements OnInit {
     });
   }
   ngOnInit() {
-    this.data.getData().subscribe(data =>{ this.Data = data
-    console.log(this.Data);
+    this.data.getData().subscribe(data => { this.Data = data;
+                                            console.log(this.Data);
     });
   }
   logForm() {

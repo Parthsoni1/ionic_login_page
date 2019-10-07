@@ -1,19 +1,38 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
-
+import { MatTableDataSource } from '@angular/material/table';
+import { MatDialog } from '@angular/material';
+import { PopupComponent } from '../popup/popup.component';
 @Component({
   selector: 'app-time-table',
   templateUrl: './time-table.page.html',
   styleUrls: ['./time-table.page.scss'],
 })
 export class TimeTablePage implements OnInit {
-  Data:any = [];
-  constructor(private data:DataService) { }
+  Data: any = [];
+  monday: any = [];
+  tuesday: any = [];
+  wednesday: any = [];
+  thursday: any = [];
+  friday: any = [];
+  dataSource = new MatTableDataSource();
+  constructor(private data: DataService, public dialog: MatDialog) { }
 
   ngOnInit() {
-    this.data.getTimeTable().subscribe(data =>{ this.Data = data
-      console.log(this.Data);
+    this.data.getTimeTable().subscribe(data => {
+       this.monday = data.Monday;
+       this.tuesday = data.Tuesday;
+       this.wednesday = data.Wednesday;
+       this.thursday = data.Thursday;
+       this.friday = data.Friday;
+       console.log(this.monday );
       });
   }
 
+  openDialog(data): void {
+    let dialogRef = this.dialog.open(PopupComponent, {
+      width: '250px',
+      data: { data }
+    });
+  }
 }
