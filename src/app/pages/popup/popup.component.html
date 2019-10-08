@@ -1,9 +1,9 @@
-<h1 mat-dialog-title>Favorite Animal</h1>
+
 <div mat-dialog-content>
 Time Table Detail
   <ul>
     <li>
-      <span *ngIf="data.animal === 'panda'">&#10003;</span> Panda
+      <span *ngFor="let D of Data">{{D.time}}</span> 
     </li>
 
   </ul>

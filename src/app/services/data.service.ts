@@ -9,10 +9,11 @@ export class DataService {
   private _url:string = "/assets/Data/Data.json" 
   private _timeTable = "/assets/Data/timeTable.json"
   constructor(private http:HttpClient) { }
-  getData(){
+  
+  getData() {
     return this.http.get(this._url);
   }
-  getTimeTable(){
+  getTimeTable() {
     return this.http.get(this._timeTable);
   }
 }

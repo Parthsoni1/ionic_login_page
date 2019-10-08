@@ -11,13 +11,14 @@
           <h4 class="th">Monday </h4>
         </div>
 
-        <ion-row *ngFor="let d of monday">
-          <div>
+        <ion-row *ngFor="let d of monday" >
+          <div (click)="presentAlert(d)" class="timeTable">
             {{d.time}}
           </div>
           <div>
             {{d.Subject}}
           </div>
+          <br><br><br>
         </ion-row>
 
       </ion-col>
@@ -33,6 +34,7 @@
           <div>
             {{d.Subject}}
           </div>
+          <br><br><br>
         </ion-row>
       </ion-col>
       <ion-col>
@@ -47,6 +49,7 @@
           <div>
             {{d.Subject}}
           </div>
+          <br><br><br>
         </ion-row>
       </ion-col>
       <ion-col>
@@ -61,6 +64,7 @@
           <div>
             {{d.Subject}}
           </div>
+          <br><br><br>
         </ion-row>
       </ion-col>
       <ion-col>
@@ -75,6 +79,7 @@
           <div>
             {{d.Subject}}
           </div>
+          <br><br><br>
         </ion-row>
       </ion-col>
     </ion-row>

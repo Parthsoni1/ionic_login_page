@@ -7,6 +7,6 @@ router.route('')
 .get(collageController.index)
 .post(collageController.Collage)
 
-router.route('/dept/:sem')
+router.route('/dept')
 .post(collageController.newUsers)
 module.exports = router; 

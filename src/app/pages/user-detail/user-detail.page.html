@@ -5,5 +5,38 @@
 </ion-header>
 
 <ion-content>
+  <form [formGroup]="studentForm" (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label>Enroll NO</ion-label>
+      <ion-input type="text" formControlName="enroll_no"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-textarea formControlName="name"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>E-Mail</ion-label>
+      <ion-textarea formControlName="email"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Birth Date</ion-label>
+      <ion-datetime formControlName="Date_of_birth" value="1990-02-19" placeholder="Select Date"></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Select Semester</ion-label>
+      <ion-select value="notifications" interface="action-sheet" formControlName="Mobile_no">
+        <ion-select-option value="Semester1">Semester1</ion-select-option>
+        <ion-select-option value="Semester2">Semester2</ion-select-option>
+        <ion-select-option value="Semester3">Semester3</ion-select-option>
+        <ion-select-option value="Semester4">Semester4</ion-select-option>
+        <ion-select-option value="Semester5">Semester5</ion-select-option>
+        <ion-select-option value="Semester6">Semester6</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <button ion-button type="submit" [disabled]="!studentForm.valid">Submit</button>
+  </form>
 
 </ion-content>

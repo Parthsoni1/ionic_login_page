@@ -13,17 +13,17 @@ export class UserPage implements OnInit {
   public appPages = [
     {
       title: 'Home',
-      url: '/home',
+      url: '/user/home',
       icon: 'home'
     },
     {
       title: 'Complain Box',
-      url: '/complain',
+      url: '/user/complain',
       icon: 'list'
     },
     {
       title: 'Time Table',
-      url: '/timetable',
+      url: '/user/timetable',
       icon: 'list'
     },
     

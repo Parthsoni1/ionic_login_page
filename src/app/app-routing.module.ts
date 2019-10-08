@@ -7,13 +7,14 @@ const routes: Routes = [
     loadChildren: () => import('./index/index.module').then(m => m.IndexPageModule)
   },
   {
-    path: '',
+    path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
-  },
-  { path: 'user', loadChildren: './pages/user/user.module#UserPageModule' },
-  { path: 'user-detail', loadChildren: './pages/user-detail/user-detail.module#UserDetailPageModule' },
-  { path: 'complain-box', loadChildren: './pages/complain-box/complain-box.module#ComplainBoxPageModule' },  { path: 'time-table', loadChildren: './pages/time-table/time-table.module#TimeTablePageModule' },
-  { path: 'popup', loadChildren: './pages/popup/popup.module#PopupPageModule' }
+  }
+  // { path: 'user', loadChildren: './pages/user/user.module#UserPageModule' },
+  // { path: 'user-detail', loadChildren: './pages/user-detail/user-detail.module#UserDetailPageModule' },
+  // { path: 'complain-box', loadChildren: './pages/complain-box/complain-box.module#ComplainBoxPageModule' },
+  // { path: 'time-table', loadChildren: './pages/time-table/time-table.module#TimeTablePageModule' },
+  // { path: 'popup', loadChildren: './pages/popup/popup.module#PopupPageModule' }
 
 ];
 @NgModule({
