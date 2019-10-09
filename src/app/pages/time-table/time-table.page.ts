@@ -4,7 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material';
 import { PopupComponent } from '../popup/popup.component';
 import { AlertController } from '@ionic/angular';
-
+import { Data } from '../../shared/timetable';
 @Component({
   selector: 'app-time-table',
   templateUrl: './time-table.page.html',
@@ -21,7 +21,7 @@ export class TimeTablePage implements OnInit {
   constructor(private data: DataService, public dialog: MatDialog, public alertController: AlertController) { }
 
   ngOnInit() {
-    this.data.getTimeTable().subscribe(data => {
+    this.data.getTimeTable().subscribe((data: Data)  => {
        this.monday = data.Monday;
        this.tuesday = data.Tuesday;
        this.wednesday = data.Wednesday;
