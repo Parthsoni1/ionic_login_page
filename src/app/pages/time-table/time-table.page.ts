@@ -22,11 +22,11 @@ export class TimeTablePage implements OnInit {
 
   ngOnInit() {
     this.data.getTimeTable().subscribe(data => {
-       this.monday = data.Monday;
-       this.tuesday = data.Tuesday;
-       this.wednesday = data.Wednesday;
-       this.thursday = data.Thursday;
-       this.friday = data.Friday;
+       //this.monday = data.Monday;
+       //this.tuesday = data.Tuesday;
+      // this.wednesday = data.Wednesday;
+      // this.thursday = data.Thursday;
+       //this.friday = data.Friday;
        console.log(this.monday );
       });
   }

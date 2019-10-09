@@ -23,12 +23,12 @@ module.exports = {
         const students = new Student(req.body);
         const semester = req.body.semester;
 
-        const collage = await Collage.findById('5d9abc9daba62916d0501a6b');
-        var mca = collage.Department.id('5d9abc9daba62916d0501a6c').MCA.id('5d9abc9daba62916d0501a6d');
+        const collage = await Collage.findById('5d9c9ea551bc754c6ccc578a');
+        var mca = collage.Department.id('5d9c9ea551bc754c6ccc578b').MCA.id('5d9c9ea551bc754c6ccc578c');
         // var semester = mca.MCA.id('5d9abc9daba62916d0501a6d');
         // res.send(mca);
         // collage.Department.id('5d9abc9daba62916d0501a6c').semester1;
-        // await students.save();
+        await students.save();
         if (semester === 'semester1') {
             mca.semester1.push(students);
             collage.save();

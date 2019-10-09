@@ -54,19 +54,19 @@ export class LoginService {
 
   async presentToastWithOptions() {
     const toast = await this.toastController.create({
-      header: 'Toast header',
-      message: 'Click to Close',
+      header: '',
+      message: 'Succesfully login',
       position: 'top',
       buttons: [
         {
           side: 'start',
-          icon: 'star',
-          text: 'Favorite',
+          icon: 'contact',
+          text: 'Mylogin',
           handler: () => {
             console.log('Favorite clicked');
           }
         }, {
-          text: 'Done',
+          text: 'Close',
           role: 'cancel',
           handler: () => {
             console.log('Cancel clicked');
