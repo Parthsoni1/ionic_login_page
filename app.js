@@ -1,49 +1,60 @@
-const express = require('express');
-const mongoose = require('mongoose');
-const bodyparser = require('body-parser');
-const cors = require('cors');
-const path = require('path');
+var createError = require('http-errors');
+var express = require('express');
+var path = require('path');
 
-const app = express();
+
+var cors = require('cors');
+var bodyparser = require('body-parser');
+
+var mongoose = require('./connection');
+
+
+var app = express();
 
 const route = require('./routes/routes');
 
-//connect to mongoDB
-mongoose.connect('mongodb://localhost:27017/Collage');
-
-//on connection
-mongoose.connection.on('connected',()=>{
-    console.log('connected to database @27017');
-});
-mongoose.connection.on('error',(err)=>{  
-    if(err){
-        console.log('error in database connection' +err);
-    }
-});
-
-//port
-const port = 3001;
-//middleware cors
 app.use(cors({ Origin:'http://localhost:4200' })); 
-//body parser
 app.use(bodyparser.json());
-//CORS middleware
-var allowCrossDomain = function(req, res, next) {
-    res.header('Access-Control-Allow-Origin', 'http://localhost:8100');
-    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-    res.header('Access-Control-Allow-Headers', 'Content-Type');
 
+// view engine setup
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+
+app.use('/collage',route);
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+  next(createError(404));
+});
+
+var allowCrossDomain = function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', 'http://localhost:4200');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
+
+  next();
+}
+function auth ( req,res,next ) {
+  console.log(req.user);
+  if(!req.user){
+    console.log('err');
+  }else{
     next();
+  }
 }
 
-app.use(allowCrossDomain);
+// error handler
+app.use(function(err, req, res, next) {
+  // set locals, only providing error in development
+  res.locals.message = err.message;
+  res.locals.error = req.app.get('env') === 'development' ? err : {};
 
-//routes
-app.use('/collage',route);
+  // render the error page
+  res.status(err.status || 500);
+  res.render('error');
+});
 
-//static file
-app.use(express.static(path.join(__dirname,'html')));
-//testing
-app.get('/', (req, res) => res.send('Hello World!'))
-
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+module.exports = app;

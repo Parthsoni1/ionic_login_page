@@ -1,5 +1,5 @@
 const Collage = require('../models/Collage');
-const Student = require('../models/Students');
+const User = require('../models/Students');
 
 module.exports = {
 
@@ -20,15 +20,17 @@ module.exports = {
         });
     },
     newUsers: async (req, res, next) => {
-        const students = new Student(req.body);
+        console.log(req.body);
+        const students = new User(req.body);
         const semester = req.body.semester;
-
-        const collage = await Collage.findById('5d9abc9daba62916d0501a6b');
-        var mca = collage.Department.id('5d9abc9daba62916d0501a6c').MCA.id('5d9abc9daba62916d0501a6d');
+        // console.log(students);
+        const collage = await Collage.findOne({});
+        console.log(collage);
+        var mca = collage.Department.id('5d9eb1eb5eb23e42243dfd7a').MCA.id('5d9eb1eb5eb23e42243dfd7b');
         // var semester = mca.MCA.id('5d9abc9daba62916d0501a6d');
         // res.send(mca);
         // collage.Department.id('5d9abc9daba62916d0501a6c').semester1;
-        // await students.save();
+        await students.save();
         if (semester === 'semester1') {
             mca.semester1.push(students);
             collage.save();
