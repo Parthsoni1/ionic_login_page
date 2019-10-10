@@ -4,9 +4,10 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <form [formGroup]="studentForm" (ngSubmit)="logForm()">
+<ion-content >
+  <form *ngIf="designation; else teacher"  [formGroup]="studentForm" (ngSubmit)="logForm()">
     <ion-item>
+      
       <ion-label>Enroll NO</ion-label>
       <ion-input type="text" formControlName="enroll_no"></ion-input>
     </ion-item>
@@ -25,9 +26,15 @@
       <ion-label>Birth Date</ion-label>
       <ion-datetime formControlName="Date_of_birth" value="1990-02-19" placeholder="Select Date"></ion-datetime>
     </ion-item>
+
+    <ion-item>
+      <ion-label>Mobile No.</ion-label>
+      <ion-textarea formControlName="Mobile_no"></ion-textarea>
+    </ion-item>
+
     <ion-item>
       <ion-label>Select Semester</ion-label>
-      <ion-select value="notifications" interface="action-sheet" formControlName="Mobile_no">
+      <ion-select value="notifications" interface="action-sheet" formControlName="Semester">
         <ion-select-option value="Semester1">Semester1</ion-select-option>
         <ion-select-option value="Semester2">Semester2</ion-select-option>
         <ion-select-option value="Semester3">Semester3</ion-select-option>
@@ -36,7 +43,101 @@
         <ion-select-option value="Semester6">Semester6</ion-select-option>
       </ion-select>
     </ion-item>
+    <ion-item>
+      <ion-label>Select Designation</ion-label>
+      <ion-select value="notifications" interface="action-sheet" formControlName="Designation">
+        <ion-select-option value="Student">Student</ion-select-option>
+        <ion-select-option value="Teacher">Teacher</ion-select-option>
+      
+      </ion-select>
+    </ion-item>
     <button ion-button type="submit" [disabled]="!studentForm.valid">Submit</button>
   </form>
+
+
+  <ng-template #teacher>
+    <form  [formGroup]="teacherForm" (ngSubmit)="teacherform()">
+      <ion-item>
+        <ion-label>Enroll NO</ion-label>
+        <ion-input type="text" formControlName="enroll_no"></ion-input>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Name</ion-label>
+        <ion-textarea formControlName="name"></ion-textarea>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>E-Mail</ion-label>
+        <ion-textarea formControlName="email"></ion-textarea>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Birth Date</ion-label>
+        <ion-datetime formControlName="Date_of_birth" value="1990-02-19" placeholder="Select Date"></ion-datetime>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Mobile No.</ion-label>
+        <ion-textarea formControlName="Mobile_no"></ion-textarea>
+      </ion-item>
+  
+      <ion-item>
+        <ion-label>Select Semester</ion-label>
+        <ion-select value="notifications" interface="action-sheet" formControlName="Semester">
+          <ion-select-option value="Semester1">Semester1</ion-select-option>
+          <ion-select-option value="Semester2">Semester2</ion-select-option>
+          <ion-select-option value="Semester3">Semester3</ion-select-option>
+          <ion-select-option value="Semester4">Semester4</ion-select-option>
+          <ion-select-option value="Semester5">Semester5</ion-select-option>
+          <ion-select-option value="Semester6">Semester6</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label>Select Designation</ion-label>
+        <ion-select value="notifications" interface="action-sheet" formControlName="Designation">
+          <ion-select-option value="Student">Student</ion-select-option>
+          <ion-select-option value="Teacher">Teacher</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-list>
+          <ion-radio-group formControlName="section">
+            <ion-list-header>
+              <ion-label>Education</ion-label>
+          
+            </ion-list-header>
+        
+            <ion-item>
+              <ion-label>Primary Education</ion-label>
+              <ion-radio slot="start" value="primary" checked></ion-radio>
+            </ion-item>
+
+                 
+            <ion-item>
+                <ion-label>Secondry Education</ion-label>
+                <ion-radio slot="start" value="Secondry" ></ion-radio>
+              </ion-item>
+          </ion-radio-group>
+
+          
+          <ion-item>
+              <ion-label>Subject</ion-label>
+              <ion-textarea formControlName="subject"></ion-textarea>
+            </ion-item>
+
+            
+          <ion-item>
+              <ion-label>Basic Pay</ion-label>
+              <ion-textarea formControlName="pay"></ion-textarea>
+            </ion-item>
+            
+      
+        </ion-list>
+      <button ion-button type="submit">Submit</button>
+    </form>
+  
+  </ng-template>
+  <ion-button expand="full" (click)="designation=!designation">Teachers Form</ion-button>
 
 </ion-content>

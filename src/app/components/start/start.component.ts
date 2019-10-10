@@ -15,4 +15,5 @@ export class StartComponent implements OnInit {
   navigateToLoginPage() {
     this.router.navigate(['login']);
   }
+  navigateToSignInPage() {  this.router.navigate(['login']); }
 }
