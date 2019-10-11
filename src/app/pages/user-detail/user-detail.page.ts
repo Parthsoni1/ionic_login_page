@@ -8,12 +8,12 @@ import { NewStudentService } from 'src/app/services/new-student.service';
   styleUrls: ['./user-detail.page.scss'],
 })
 export class UserDetailPage implements OnInit {
-  private teacherForm: FormGroup;
-  private studentForm: FormGroup;
+  public teacherForm: FormGroup;
+  public studentForm: FormGroup;
 
   designation = true;
 
-  constructor(private formBuilder: FormBuilder, private student: NewStudentService) {
+  constructor(public formBuilder: FormBuilder, public student: NewStudentService) {
 
     this.teacherForm = this.formBuilder.group({
       enroll_no: ['', Validators.required],

@@ -9,9 +9,9 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class ComplainBoxPage implements OnInit {
 
-  private todo: FormGroup;
+  public todo: FormGroup;
   Data: any = [];
-  constructor(private formBuilder: FormBuilder, private data: DataService) {
+  constructor(public formBuilder: FormBuilder, public data: DataService) {
     this.todo = this.formBuilder.group({
       title: ['', Validators.required],
       description: [''],

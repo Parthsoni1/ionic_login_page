@@ -15,6 +15,7 @@ import { AppComponent } from './app.component';
 import { PopupPageModule } from './pages/popup/popup.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { PopupComponent } from './pages/popup/popup.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
 @NgModule({
   declarations: [AppComponent,
     PopupComponent],
@@ -26,7 +27,8 @@ import { PopupComponent } from './pages/popup/popup.component';
     AngularFirestoreModule,
     HttpClientModule,
     AngularFireAuthModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [
     StatusBar,

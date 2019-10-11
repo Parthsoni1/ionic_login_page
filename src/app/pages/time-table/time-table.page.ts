@@ -18,7 +18,7 @@ export class TimeTablePage implements OnInit {
   thursday: any = [];
   friday: any = [];
   dataSource = new MatTableDataSource();
-  constructor(private data: DataService, public dialog: MatDialog, public alertController: AlertController) { }
+  constructor(public data: DataService, public dialog: MatDialog, public alertController: AlertController) { }
 
   ngOnInit() {
     this.data.getTimeTable().subscribe((data: Data)  => {

@@ -29,8 +29,8 @@ export class UserPage implements OnInit {
     
   ];
 
-  constructor(private menu: MenuController,
-              private platform: Platform, private splashScreen: SplashScreen, private statusBar: StatusBar) {   this.initializeApp();
+  constructor(public menu: MenuController,
+              public platform: Platform, public splashScreen: SplashScreen, public statusBar: StatusBar) {   this.initializeApp();
               }
 
   ngOnInit() {

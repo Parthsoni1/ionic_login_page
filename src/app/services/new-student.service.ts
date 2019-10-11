@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class NewStudentService {
 
-  constructor(private http: HttpClient) { }
+  constructor(public http: HttpClient) { }
   newStudent(students) {
     return this.http.post(`http://localhost:3001/collage/dept`, students);
   }
