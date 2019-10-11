@@ -10,15 +10,16 @@ import { NewStudentService } from 'src/app/services/new-student.service';
 export class UserDetailPage implements OnInit {
   public teacherForm: FormGroup;
   public studentForm: FormGroup;
-
+  // tslint:disable-next-line:ban-types
+  show: Boolean = false;
   designation = true;
+  number =  Math.floor(Math.random() * 1000000000000);
 
   constructor(public formBuilder: FormBuilder, public student: NewStudentService) {
-
     this.teacherForm = this.formBuilder.group({
-      enroll_no: ['', Validators.required],
       name: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: [, [Validators.required, Validators.minLength(6)]],
       Date_of_birth: ['', Validators.required],
       Mobile_no: ['', Validators.required],
       Semester: ['', Validators.required],
@@ -28,17 +29,16 @@ export class UserDetailPage implements OnInit {
       section: ['', Validators.required]
     });
     this.studentForm = this.formBuilder.group({
-      enroll_no: ['', Validators.required],
+      enroll_no: [this.number, Validators.required],
       name: ['', Validators.required],
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: [, [Validators.required, Validators.minLength(6), Validators.maxLength(6)]],
       Date_of_birth: ['', Validators.required],
+      Designation: ['Student', Validators.required],
       Mobile_no: ['', Validators.required],
       Semester: ['', Validators.required],
-      Designation: ['', Validators.required]
+
     });
-
-
-
   }
 
   ngOnInit() {
@@ -58,5 +58,8 @@ export class UserDetailPage implements OnInit {
       .subscribe((res) => {
         console.log(res);
       });
+  }
+  isPassword() {
+    this.show = !this.show;
   }
 }

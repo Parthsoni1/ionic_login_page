@@ -8,5 +8,11 @@ router.route('')
 .post(collageController.Collage)
 
 router.route('/dept')
+.get(collageController.allStudent)
 .post(collageController.newUsers)
+
+router.route('/login')
+.post(collageController.userLogin)
+
+
 module.exports = router; 

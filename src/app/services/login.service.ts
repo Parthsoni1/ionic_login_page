@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Employee } from './User.model';
-
+import { HttpClient } from '@angular/common/http';
 import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firestore';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Observable, of } from 'rxjs';
@@ -17,7 +17,7 @@ export class LoginService {
   formdata: Employee;
   user$: string;
 
-  constructor(public toastController: ToastController,
+  constructor(public toastController: ToastController, private http: HttpClient,
               public firestore: AngularFirestore, public Auth: AngularFireAuth, public router: Router) {
     this.Auth.authState.subscribe(user => {
       if (user) {
@@ -54,19 +54,19 @@ export class LoginService {
 
   async presentToastWithOptions() {
     const toast = await this.toastController.create({
-      header: 'Toast header',
-      message: 'Click to Close',
+      header: '',
+      message: 'Succesfully login',
       position: 'top',
       buttons: [
         {
           side: 'start',
-          icon: 'star',
-          text: 'Favorite',
+          icon: 'contact',
+          text: 'Mylogin',
           handler: () => {
             console.log('Favorite clicked');
           }
         }, {
-          text: 'Done',
+          text: 'Close',
           role: 'cancel',
           handler: () => {
             console.log('Cancel clicked');
@@ -75,6 +75,10 @@ export class LoginService {
       ]
     });
     toast.present();
+  }
+  authLogin(credential) {
+    return this.http.post(`http://localhost:3001/collage/login`, credential);
+
   }
 
 }

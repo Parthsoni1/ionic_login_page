@@ -16,21 +16,27 @@ const routes: Routes = [
                 )
             },
             {
-                path: 'login',
+                path: 'adminlogin',
                 loadChildren: () => import('../pages/login/login.module').then(
                     m => m.LoginPageModule
                 )
             },
             {
-                path: 'signup',
-                loadChildren: () => import('../pages/signup/signup.module').then(
-                    m => m.SignupPageModule
+                path: 'userlogin',
+                loadChildren: () => import('../pages/user-login/user-login.module').then(
+                    m => m.UserLoginPageModule
                 )
             },
             {
                 path: 'user',
                 loadChildren: () => import('../pages/user/user.module').then(
                     m => m.UserPageModule
+                )
+            },
+            {
+                path: 'userDetail',
+                loadChildren: () => import('../pages/user-detail/user-detail.module').then(
+                    m => m.UserDetailPageModule
                 )
             }
 

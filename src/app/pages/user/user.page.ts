@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Platform, MenuController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -9,13 +10,11 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
   styleUrls: ['./user.page.scss'],
 })
 export class UserPage implements OnInit {
+  designation: string;
 
-  public appPages = [
-    {
-      title: 'Home',
-      url: '/user/home',
-      icon: 'home'
-    },
+
+  public department = [
+
     {
       title: 'Complain Box',
       url: '/user/complain',
@@ -26,14 +25,38 @@ export class UserPage implements OnInit {
       url: '/user/timetable',
       icon: 'list'
     },
-    
+    {
+      title: 'Attndence',
+      url: '/user/attndence',
+      icon: 'list'
+    },
+    {
+      title: 'complain',
+      url: '/user/complain',
+      icon: 'list'
+    }
+  ];
+  public teacher = [
+
+    {
+      title: 'Complain Box',
+      url: '/user/complain',
+      icon: 'list'
+    },
+    {
+      title: 'Time Table',
+      url: '/user/timetable',
+      icon: 'list'
+    }
   ];
 
-  constructor(public menu: MenuController,
+
+  constructor(public menu: MenuController, public router: Router,
               public platform: Platform, public splashScreen: SplashScreen, public statusBar: StatusBar) {   this.initializeApp();
               }
 
   ngOnInit() {
+    this.designation = localStorage.getItem('designation');
   }
   initializeApp() {
     this.platform.ready().then(() => {
@@ -54,5 +77,9 @@ export class UserPage implements OnInit {
   openCustom() {
     this.menu.enable(true, 'custom');
     this.menu.open('custom');
+  }
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['']);
   }
 }

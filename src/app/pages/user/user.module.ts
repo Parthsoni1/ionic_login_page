@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { RouteReuseStrategy } from '@angular/router';
-import { IonicModule , IonicRouteStrategy } from '@ionic/angular';
+import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { UserPage } from './user.page';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
@@ -16,30 +16,25 @@ const routes: Routes = [
     component: UserPage,
     children: [
       {
-          path: '',
-          loadChildren: () => import('../../home/home.module').then(
-              m => m.HomePageModule
-          )
-      },
-      {
-          path: 'timetable',
-          loadChildren: () => import('../time-table/time-table.module').then(
-              m => m.TimeTablePageModule
-          )
-      },
-      {
-          path: 'complain',
-          loadChildren: () => import('../complain-box/complain-box.module').then(
-              m => m.ComplainBoxPageModule
-          )
-      },
-      {
-        path: 'userDetail',
-        loadChildren: () => import('../user-detail/user-detail.module').then(
-            m => m.UserDetailPageModule
+        path: 'timetable',
+        loadChildren: () => import('../time-table/time-table.module').then(
+          m => m.TimeTablePageModule
         )
-    }
-  ]
+      },
+      {
+        path: 'complain',
+        loadChildren: () => import('../complain-box/complain-box.module').then(
+          m => m.ComplainBoxPageModule
+        )
+      },
+      {
+        path: 'attndence',
+        loadChildren: () => import('../attendance/attendance.module').then(
+          m => m.AttendancePageModule
+        )
+      }
+
+    ]
   },
 
 
@@ -61,4 +56,4 @@ const routes: Routes = [
   ],
   declarations: [UserPage]
 })
-export class UserPageModule {}
+export class UserPageModule { }

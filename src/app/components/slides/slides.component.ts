@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-slides',
@@ -11,8 +12,9 @@ export class SlidesComponent implements OnInit {
     initialSlide: 0,
     speed: 400
   };
-  constructor() { }
+  constructor(public router: Router) { }
 
   ngOnInit() {}
-
+  navigateToLoginPage() { this.router.navigate(['userlogin']); }
+  navigateToSignInPage() {  this.router.navigate(['adminlogin']); }
 }

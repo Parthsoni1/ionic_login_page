@@ -1,13 +1,12 @@
 <ion-slides pager="true" [options]="slideOpts">
   <ion-slide>
-    <app-logo></app-logo>
+    <img src="assets/images/Degree.png" alt="mango"/>
   </ion-slide>
+  
+    <h1>Login here..</h1>
+  
   <ion-slide>
-    <h1>My Collage</h1>
-  <br/> <hr>
-    <h6>Swipe Left</h6>
-  </ion-slide>
-  <ion-slide>
-    <app-start></app-start>
+    <ion-button expand="block" (click)="navigateToLoginPage()">User </ion-button>
+    <ion-button expand="block" (click)="navigateToSignInPage()">Admin </ion-button>
   </ion-slide>
 </ion-slides>

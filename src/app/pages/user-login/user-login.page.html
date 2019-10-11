@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>user-login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="loginForm" >
+    <ion-list>
+
+
+      <ion-item>
+        <ion-label>E-Mail</ion-label>
+        <ion-textarea formControlName="email"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Password</ion-label>
+        <ion-textarea formControlName="password"></ion-textarea>
+      </ion-item>
+      <ion-button (click)="login()" expand="block" shape="round" color="success">Sign In</ion-button>
+
+    </ion-list>
+  </form>
+
+  <ion-item>
+    <a routerLink="/userDetail"> Create Account</a>
+  </ion-item>
+</ion-content>
