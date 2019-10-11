@@ -16,7 +16,6 @@ export class UserDetailPage implements OnInit {
   constructor(private formBuilder: FormBuilder, private student: NewStudentService) {
 
     this.teacherForm = this.formBuilder.group({
-      enroll_no: ['', Validators.required],
       name: ['', Validators.required],
       email: ['', Validators.required],
       Date_of_birth: ['', Validators.required],

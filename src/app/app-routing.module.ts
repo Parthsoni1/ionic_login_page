@@ -9,7 +9,8 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomePageModule)
-  }
+  },  { path: 'user-login', loadChildren: './pages/user-login/user-login.module#UserLoginPageModule' }
+
   // { path: 'user', loadChildren: './pages/user/user.module#UserPageModule' },
   // { path: 'user-detail', loadChildren: './pages/user-detail/user-detail.module#UserDetailPageModule' },
   // { path: 'complain-box', loadChildren: './pages/complain-box/complain-box.module#ComplainBoxPageModule' },

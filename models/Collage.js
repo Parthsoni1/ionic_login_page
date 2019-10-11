@@ -6,27 +6,27 @@ const CollageSchema = new Schema({
         MCA: [{
             semester1: [{
                 type: Schema.Types.ObjectId,
-                ref: 'students'
+                ref: 'Users'
             }],
             semester2: [{
                 type: Schema.Types.ObjectId,
-                ref: 'students'
+                ref: 'Users'
             }],
             semester3: [{
                 type: Schema.Types.ObjectId,
-                ref: 'students'
+                ref: 'Users'
             }],
             semester4: [{
                 type: Schema.Types.ObjectId,
-                ref: 'students'
+                ref: 'Users'
             }],
             semester5: [{
                 type: Schema.Types.ObjectId,
-                ref: 'students'
+                ref: 'Users'
             }],
             semester6: [{
                 type: Schema.Types.ObjectId,
-                ref: 'students'
+                ref: 'Users'
             }]
         }],
     }],

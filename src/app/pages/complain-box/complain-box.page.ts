@@ -9,20 +9,22 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class ComplainBoxPage implements OnInit {
 
-  private todo: FormGroup;
+  private complain: FormGroup;
   Data: any = [];
-  constructor(private formBuilder: FormBuilder, private data: DataService) {
-    this.todo = this.formBuilder.group({
-      title: ['', Validators.required],
-      description: [''],
+  constructor(private formBuilder: FormBuilder) {
+    this.complain = this.formBuilder.group({
+      Name: ['', Validators.required],
+      Email: ['', Validators.required],
+      MobileNo: ['', Validators.required],
+      Date: ['', Validators.required],
+      Message: ['', Validators.required]
     });
   }
   ngOnInit() {
-    this.data.getData().subscribe(data => { this.Data = data;
-                                            console.log(this.Data);
-    });
+    
+  
   }
   logForm() {
-    console.log(this.todo.value);
+    console.log(this.complain.value);
   }
 }

@@ -5,26 +5,26 @@
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="todo" (ngSubmit)="logForm()">
+  <form [formGroup]="complain" (ngSubmit)="logForm()">
     <ion-item>
-      <ion-label>Todo</ion-label>
-      <ion-input type="text" formControlName="title"></ion-input>
+      <ion-label> Name:</ion-label>
+      <ion-input type="text" formControlName="Name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Description</ion-label>
-      <ion-textarea formControlName="description"></ion-textarea>
+      <ion-label>Email</ion-label>
+      <ion-textarea formControlName="Email"></ion-textarea>
     </ion-item>
     
     <ion-item>
-      <ion-label>Notifications</ion-label>
-      <ion-select value="notifications" interface="action-sheet">
-        <ion-select-option value="enable">Enable</ion-select-option>
-        <ion-select-option value="mute">Mute</ion-select-option>
-        <ion-select-option value="mute_week">Mute for a week</ion-select-option>
-        <ion-select-option value="mute_year">Mute for a year</ion-select-option>
-      </ion-select>
+      <ion-label>MobileNo</ion-label>
+      <ion-textarea formControlName="MobileNo"></ion-textarea>
     </ion-item>
-    <button ion-button type="submit" [disabled]="!todo.valid">Submit</button>
+    <ion-item>
+      <ion-label>Message</ion-label>
+      <ion-textarea formControlName="Message"></ion-textarea>
+    </ion-item>
+   
+    <ion-button ion-button type="submit" [disabled]="!complain.valid">Submit</ion-button>
   </form>
 
 </ion-content>

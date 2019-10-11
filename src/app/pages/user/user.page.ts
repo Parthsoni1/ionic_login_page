@@ -26,6 +26,11 @@ export class UserPage implements OnInit {
       url: '/user/timetable',
       icon: 'list'
     },
+    {
+      title: 'User Detail',
+      url: '/user/userDetail',
+      icon: 'list'
+    },
     
   ];
 

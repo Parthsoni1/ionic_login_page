@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content >
-  <form *ngIf="designation; else teacher"  [formGroup]="studentForm" (ngSubmit)="logForm()">
+  <form *ngIf="designation; else teacher"  [formGroup]="studentForm" (ngSubmit)="logForm()" >
     <ion-item>
       
       <ion-label>Enroll NO</ion-label>
@@ -51,16 +51,14 @@
       
       </ion-select>
     </ion-item>
-    <button ion-button type="submit" [disabled]="!studentForm.valid">Submit</button>
+    <ion-button ion-button type="submit" [disabled]="!studentForm.valid">Submit</ion-button>
+    <ion-button expand="full" (click)="designation=!designation">Teachers Form</ion-button>
   </form>
 
 
   <ng-template #teacher>
     <form  [formGroup]="teacherForm" (ngSubmit)="teacherform()">
-      <ion-item>
-        <ion-label>Enroll NO</ion-label>
-        <ion-input type="text" formControlName="enroll_no"></ion-input>
-      </ion-item>
+
   
       <ion-item>
         <ion-label>Name</ion-label>
@@ -135,9 +133,10 @@
       
         </ion-list>
       <button ion-button type="submit">Submit</button>
+      <ion-button expand="full" (click)="designation=!designation">Student Form</ion-button>
     </form>
   
   </ng-template>
-  <ion-button expand="full" (click)="designation=!designation">Teachers Form</ion-button>
+
 
 </ion-content>
