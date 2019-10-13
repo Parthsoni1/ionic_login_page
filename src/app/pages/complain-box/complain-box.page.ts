@@ -9,7 +9,7 @@ import { DataService } from 'src/app/services/data.service';
 })
 export class ComplainBoxPage implements OnInit {
 
-  private complain: FormGroup;
+  public complain: FormGroup;
   Data: any = [];
   constructor(private formBuilder: FormBuilder) {
     this.complain = this.formBuilder.group({

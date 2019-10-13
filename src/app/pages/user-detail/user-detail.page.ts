@@ -46,11 +46,16 @@ export class UserDetailPage implements OnInit {
   }
   logForm() {
 
-    console.log(this.studentForm.value);
-    this.student.newStudent(this.studentForm.value)
-    .subscribe((res) => {
-      console.log(res);
-    });
+    // console.log(this.studentForm.value);
+    // this.student.newStudent(this.studentForm.value)
+    // .subscribe((res) => {
+    //   console.log(res);
+    // });
+    this.student.createUser(this.studentForm.value)
+    // .then(
+    //   res => {
+    //     console.log()
+    //   })
   }
   teacherform() {
     console.log(this.teacherForm.value);

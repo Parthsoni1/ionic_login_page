@@ -80,5 +80,11 @@ export class LoginService {
     return this.http.post(`http://localhost:3001/collage/login`, credential);
 
   }
+  searchUsers(searchValue) {
+    console.log(searchValue);
+    return this.firestore.collection('users', ref => ref.where('email', '>=', searchValue.email)
+      .where('email', '<=', searchValue.email + '\uf8ff'))
+      .snapshotChanges();
+  }
 
 }
