@@ -31,10 +31,12 @@ export class ComplainListPage implements OnInit {
         this.Complain.forEach(e => {
           if (e.approveByHOD === false) {
             if (e.approveByTeacher === false) {
-              console.log(this.Complain);
+
               this.dataSource = this.Complain;
+              console.log('Complain', this.dataSource );
             }
           } else {
+            console.log('Complain', this.dataSource );
             console.log('No Data Found');
           }
         });
