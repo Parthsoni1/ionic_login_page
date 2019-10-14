@@ -22,7 +22,23 @@ export class NewStudentService {
       Date_of_birth: value.Date_of_birth,
       Mobile_no: value.Mobile_no,
       email: value.email,
-     
+
+    });
+  }
+  createFaculty(value) {
+    console.log(value);
+    return this.db.collection('users').add({
+      name: value.name,
+      password: value.password,
+      Designation: value.Designation,
+      Semester: value.Semester,
+      Date_of_birth: value.Date_of_birth,
+      Mobile_no: value.Mobile_no,
+      email: value.email,
+      section: value.section,
+      subject: value.subject,
+      pay: value.pay,
+
     });
   }
 

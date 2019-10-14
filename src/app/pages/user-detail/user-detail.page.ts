@@ -13,7 +13,7 @@ export class UserDetailPage implements OnInit {
   // tslint:disable-next-line:ban-types
   show: Boolean = false;
   designation = true;
-  number =  Math.floor(Math.random() * 1000000000000);
+  number = Math.floor(Math.random() * 1000000000000);
 
   constructor(public formBuilder: FormBuilder, public student: NewStudentService) {
     this.teacherForm = this.formBuilder.group({
@@ -52,17 +52,22 @@ export class UserDetailPage implements OnInit {
     //   console.log(res);
     // });
     this.student.createUser(this.studentForm.value)
-    // .then(
-    //   res => {
-    //     console.log()
-    //   })
+    .then(
+      res => {
+        console.log(res);
+      });
   }
   teacherform() {
     console.log(this.teacherForm.value);
-    this.student.newStudent(this.teacherForm.value)
-      .subscribe((res) => {
+    this.student.createFaculty(this.teacherForm.value)
+    .then(
+      res => {
         console.log(res);
       });
+    // this.student.newStudent(this.teacherForm.value)
+    //   .subscribe((res) => {
+    //     console.log(res);
+    //   });
   }
   isPassword() {
     this.show = !this.show;

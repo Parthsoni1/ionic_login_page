@@ -32,7 +32,20 @@ export class UserLoginPage implements OnInit {
           ...item.payload.doc.data()
         } as any;
       });
-      console.log(this.User);
+
+      if (this.User.length === 0) {
+        console.log('invalid');
+    } else {
+        if (this.User[0].password !== this.loginForm.value.password) {
+          console.log('invalid pass');
+    } else {
+       localStorage.setItem('designation',this.User[0].Designation);
+       localStorage.setItem('email', this.User[0].email);
+       this.router.navigate(['user']);
+    }
+}
+
+      console.log(this.User[0].password);
     })
     // this.userLogin.authLogin(this.loginForm.value)
     // .subscribe((res: any) => {
