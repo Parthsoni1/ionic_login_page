@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "myNewApp",
+  "appId": "com.example.app",
+  "appName": "Collge",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www"

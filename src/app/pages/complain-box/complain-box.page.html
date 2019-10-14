@@ -1,5 +1,8 @@
 <ion-header>
   <ion-toolbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
     <ion-title>complain-box</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -19,9 +22,24 @@
       <ion-label>MobileNo</ion-label>
       <ion-textarea formControlName="MobileNo"></ion-textarea>
     </ion-item>
+
     <ion-item>
       <ion-label>Message</ion-label>
       <ion-textarea formControlName="Message"></ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Department</ion-label>
+      <ion-select interface="popover" formControlName="Department" >
+        <ion-select-option *ngFor="let item of DepartmentCat" selected>{{item}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Location</ion-label>
+      <ion-select interface="popover" formControlName="location" >
+        <ion-select-option *ngFor="let item of location" selected>{{item}}</ion-select-option>
+      </ion-select>
     </ion-item>
    
     <ion-button ion-button type="submit" [disabled]="!complain.valid">Submit</ion-button>

@@ -51,7 +51,7 @@
     </ion-item>
  
     <ion-button ion-button type="submit" [disabled]="!studentForm.valid">Submit</ion-button>
-    <ion-button expand="full" (click)="designation=!designation">Teachers Form</ion-button>
+    <ion-button expand="full" (click)="designation=!designation">Faculty Form</ion-button>
   </form>
 
 
@@ -99,7 +99,7 @@
       <ion-item>
         <ion-label>Select Designation</ion-label>
         <ion-select value="notifications" interface="action-sheet" formControlName="Designation">
-          <ion-select-option value="Student">HOD</ion-select-option>
+          <ion-select-option value="HOD">HOD</ion-select-option>
           <ion-select-option value="Teacher">Teacher</ion-select-option>
         </ion-select>
       </ion-item>

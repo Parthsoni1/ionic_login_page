@@ -11,6 +11,8 @@ import { Router } from '@angular/router';
 export class UserLoginPage implements OnInit {
   public loginForm: FormGroup;
   User = [];
+  // tslint:disable-next-line:ban-types
+  show: Boolean = false;
   constructor(public formBuilder: FormBuilder, public student: NewStudentService, public userLogin: LoginService, public router: Router ) {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
@@ -21,7 +23,9 @@ export class UserLoginPage implements OnInit {
 
   ngOnInit() {
   }
-
+  isPassword() {
+    this.show = !this.show;
+  }
   login() {
     console.log(this.loginForm.value);
     this.userLogin.searchUsers(this.loginForm.value)
@@ -46,7 +50,7 @@ export class UserLoginPage implements OnInit {
 }
 
       console.log(this.User[0].password);
-    })
+    });
     // this.userLogin.authLogin(this.loginForm.value)
     // .subscribe((res: any) => {
     //  console.log(res);

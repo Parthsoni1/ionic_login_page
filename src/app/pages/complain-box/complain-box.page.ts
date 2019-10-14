@@ -11,13 +11,16 @@ export class ComplainBoxPage implements OnInit {
 
   public complain: FormGroup;
   Data: any = [];
-  constructor(private formBuilder: FormBuilder) {
+  DepartmentCat = ['Admin', 'Faculty', 'Technical', 'Account'];
+  location = ['Mca Block-1', 'Mca Block-2', 'BE Block-1', 'BE Block-2', 'Account Dept', 'Canteen'];
+  constructor(private formBuilder: FormBuilder,  public service: DataService) {
     this.complain = this.formBuilder.group({
       Name: ['', Validators.required],
       Email: ['', Validators.required],
       MobileNo: ['', Validators.required],
-      Date: ['', Validators.required],
-      Message: ['', Validators.required]
+      Message: ['', Validators.required],
+      Department:  ['', Validators.required],
+      location: ['']
     });
   }
   ngOnInit() {
@@ -25,5 +28,10 @@ export class ComplainBoxPage implements OnInit {
   }
   logForm() {
     console.log(this.complain.value);
+    this.service.createComplain(this.complain.value)
+    .then(
+      res => {
+        console.log(res);
+      });
   }
 }

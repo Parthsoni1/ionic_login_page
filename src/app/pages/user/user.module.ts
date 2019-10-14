@@ -32,6 +32,12 @@ const routes: Routes = [
         loadChildren: () => import('../attendance/attendance.module').then(
           m => m.AttendancePageModule
         )
+      },
+      {
+        path: 'complainList',
+        loadChildren: () => import('../complain-list/complain-list.module').then(
+          m => m.ComplainListPageModule
+        )
       }
 
     ]

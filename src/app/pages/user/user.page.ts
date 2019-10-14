@@ -31,8 +31,8 @@ export class UserPage implements OnInit {
       icon: 'list'
     },
     {
-      title: 'complain',
-      url: '/user/complain',
+      title: 'Complain List' ,
+      url: '/user/complainList',
       icon: 'list'
     }
   ];

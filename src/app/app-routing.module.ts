@@ -6,7 +6,8 @@ const routes: Routes = [
     path: '',
     loadChildren: () => import('./index/index.module').then(m => m.IndexPageModule)
   },
-  { path: 'user-login', loadChildren: './pages/user-login/user-login.module#UserLoginPageModule' },  { path: 'attendance', loadChildren: './pages/attendance/attendance.module#AttendancePageModule' }
+  { path: 'user-login', loadChildren: './pages/user-login/user-login.module#UserLoginPageModule' },  { path: 'attendance', loadChildren: './pages/attendance/attendance.module#AttendancePageModule' },
+  { path: 'complain-list', loadChildren: './pages/complain-list/complain-list.module#ComplainListPageModule' }
 
 
   // { path: 'user', loadChildren: './pages/user/user.module#UserPageModule' },

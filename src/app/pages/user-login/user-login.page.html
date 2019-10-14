@@ -14,9 +14,10 @@
         <ion-textarea formControlName="email"></ion-textarea>
       </ion-item>
 
-      <ion-item>
+      <ion-item >
         <ion-label>Password</ion-label>
-        <ion-textarea formControlName="password"></ion-textarea>
+        <ion-input [type]="show ? 'text' : 'password'" formControlName="password"></ion-input>
+        <ion-checkbox color="primary" checked slot="end" (click)="isPassword()"></ion-checkbox>
       </ion-item>
       <ion-button (click)="login()" expand="block" shape="round" color="success">Sign In</ion-button>
 
