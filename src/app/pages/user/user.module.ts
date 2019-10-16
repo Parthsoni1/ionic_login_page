@@ -38,6 +38,18 @@ const routes: Routes = [
         loadChildren: () => import('../complain-list/complain-list.module').then(
           m => m.ComplainListPageModule
         )
+      },
+      {
+        path: 'complainStatus',
+        loadChildren: () => import('../complain-status/complain-status.module').then(
+          m => m.ComplainStatusPageModule
+        )
+      },
+      {
+        path: 'userList',
+        loadChildren: () => import('../user-list/user-list.module').then(
+          m => m.UserListPageModule
+        )
       }
 
     ]

@@ -35,6 +35,7 @@ export class LoginService {
     try {
       await this.Auth.auth.signInWithEmailAndPassword(email, password);
       this.presentToastWithOptions();
+      localStorage.setItem('designation', 'Admin');
       this.router.navigate(['/user']);
     } catch (e) {
       alert('Error!' + e.message);

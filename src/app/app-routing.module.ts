@@ -7,7 +7,9 @@ const routes: Routes = [
     loadChildren: () => import('./index/index.module').then(m => m.IndexPageModule)
   },
   { path: 'user-login', loadChildren: './pages/user-login/user-login.module#UserLoginPageModule' },  { path: 'attendance', loadChildren: './pages/attendance/attendance.module#AttendancePageModule' },
-  { path: 'complain-list', loadChildren: './pages/complain-list/complain-list.module#ComplainListPageModule' }
+  { path: 'complain-list', loadChildren: './pages/complain-list/complain-list.module#ComplainListPageModule' },
+  { path: 'complain-status', loadChildren: './pages/complain-status/complain-status.module#ComplainStatusPageModule' },
+  { path: 'user-list', loadChildren: './pages/user-list/user-list.module#UserListPageModule' }
 
 
   // { path: 'user', loadChildren: './pages/user/user.module#UserPageModule' },

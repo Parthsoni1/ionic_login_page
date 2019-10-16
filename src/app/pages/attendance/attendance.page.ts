@@ -9,16 +9,10 @@ import { MatTableDataSource } from '@angular/material/table';
 export class AttendancePage implements OnInit {
 studentData: [];
 dataSource = new MatTableDataSource();
-  constructor(public data: DataService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.getStudent();
+
   }
-getStudent() {
-  this.data.getStudent()
-  .subscribe((res: any) => {
-    this.dataSource = res;
-    console.log(res);
-  });
-}
+
 }

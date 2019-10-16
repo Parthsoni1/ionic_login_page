@@ -3,6 +3,8 @@ import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { NewStudentService } from 'src/app/services/new-student.service';
 import { LoginService } from 'src/app/services/login.service';
 import { Router } from '@angular/router';
+import { ToastController } from '@ionic/angular';
+
 @Component({
   selector: 'app-user-login',
   templateUrl: './user-login.page.html',
@@ -13,7 +15,8 @@ export class UserLoginPage implements OnInit {
   User = [];
   // tslint:disable-next-line:ban-types
   show: Boolean = false;
-  constructor(public formBuilder: FormBuilder, public student: NewStudentService, public userLogin: LoginService, public router: Router ) {
+  constructor(public formBuilder: FormBuilder,public toastController: ToastController,
+     public student: NewStudentService, public userLogin: LoginService, public router: Router ) {
     this.loginForm = this.formBuilder.group({
       email: ['', Validators.required],
       password: ['', Validators.required],
@@ -38,11 +41,12 @@ export class UserLoginPage implements OnInit {
       });
 
       if (this.User.length === 0) {
-        console.log('invalid');
+        alert('invalid username');
     } else {
         if (this.User[0].password !== this.loginForm.value.password) {
-          console.log('invalid pass');
+          alert('invalid password');
     } else {
+       this.presentToastWithOptions();
        localStorage.setItem('designation',this.User[0].Designation);
        localStorage.setItem('email', this.User[0].email);
        this.router.navigate(['user']);
@@ -61,5 +65,29 @@ export class UserLoginPage implements OnInit {
     //   this.router.navigate(['user']);
     //  }
     // });
+  }
+  async presentToastWithOptions() {
+    const toast = await this.toastController.create({
+      header: '',
+      message: 'Succesfully login',
+      position: 'top',
+      buttons: [
+        {
+          side: 'start',
+          icon: 'contact',
+          text: 'Mylogin',
+          handler: () => {
+            console.log('Favorite clicked');
+          }
+        }, {
+          text: 'Close',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        }
+      ]
+    });
+    toast.present();
   }
 }

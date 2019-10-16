@@ -38,7 +38,7 @@
     </ion-header>
 
     <ion-content>
-      <ion-list *ngIf="designation==='Teacher' || designation ==='HOD'; else student">
+      <ion-list *ngIf="designation==='Teacher' || designation ==='HOD'; else admin">
         <ion-menu-toggle auto-hide="false" *ngFor="let p of department">
           <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
             <ion-icon slot="start" [name]="p.icon"></ion-icon>
@@ -48,9 +48,12 @@
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
-      <ng-template #student>
-        <ion-list>
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of teacher">
+
+
+
+      <ng-template  #admin>
+        <ion-list *ngIf="designation==='Admin'; else student" #admin>
+          <ion-menu-toggle auto-hide="false" *ngFor="let p of adminarray">
             <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
               <ion-icon slot="start" [name]="p.icon"></ion-icon>
               <ion-label>
@@ -60,9 +63,23 @@
           </ion-menu-toggle>
         </ion-list>
       </ng-template>
+
+      <ng-template #student>
+          <ion-list>
+            <ion-menu-toggle auto-hide="false" *ngFor="let p of user">
+              <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
+                <ion-icon slot="start" [name]="p.icon"></ion-icon>
+                <ion-label>
+                  {{p.title}}
+                </ion-label>
+              </ion-item>
+            </ion-menu-toggle>
+          </ion-list>
+        </ng-template>
+
     </ion-content>
   </ion-menu>
-
+<p>Swipe Left To Menu</p>
   <!-- the main content -->
   <ion-router-outlet id="menu-content"></ion-router-outlet>
 

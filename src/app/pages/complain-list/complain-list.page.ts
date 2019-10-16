@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { MatTableDataSource } from '@angular/material/table';
+
 @Component({
   selector: 'app-complain-list',
   templateUrl: './complain-list.page.html',
@@ -10,7 +11,7 @@ export class ComplainListPage implements OnInit {
   Complain = [];
   ComplainList = [];
   approveIdArry = [];
-  displayedColumns: string[] = ['EmpName', 'RishabhId', 'DivName', 'icon'];
+  displayedColumns: string[] = ['EmpName', 'RishabhId', 'DivName','Message', 'icon'];
   dataSource: any = new MatTableDataSource();
   constructor(public service: DataService) { }
 
@@ -28,22 +29,16 @@ export class ComplainListPage implements OnInit {
             ...item.payload.doc.data()
           } as any;
         });
-        this.Complain.forEach(e => {
-          if (e.approveByHOD === false) {
-            if (e.approveByTeacher === false) {
-
-              this.dataSource = this.Complain;
-              console.log('Complain', this.dataSource );
-            }
-          } else {
-            console.log('Complain', this.dataSource );
-            console.log('No Data Found');
+        this.Complain.forEach((e)  => {
+            if (e.approveByHOD === false) {
+              this.ComplainList.push(e);
+              this.dataSource = this.ComplainList;
+            } else {
+            console.log(' no Complain', this.dataSource );
           }
         });
-        this.dataSource = this.Complain;
         return this.Complain;
       });
-
   }
   onChange = (value, isChecked) => {
     console.log(isChecked);
@@ -59,7 +54,7 @@ export class ComplainListPage implements OnInit {
   }
   submitApprove(value) {
     console.log(value);
-    value.approveByTeacher = true;
+    value.approveByHOD = true;
     this.service.updateComplain(value.id, value)
     .then(
       res => {

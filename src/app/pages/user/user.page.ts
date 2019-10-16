@@ -18,12 +18,12 @@ export class UserPage implements OnInit {
     {
       title: 'Complain Box',
       url: '/user/complain',
-      icon: 'list'
+      icon: 'mail'
     },
     {
       title: 'Time Table',
       url: '/user/timetable',
-      icon: 'list'
+      icon: 'clock'
     },
     {
       title: 'Attndence',
@@ -36,7 +36,7 @@ export class UserPage implements OnInit {
       icon: 'list'
     }
   ];
-  public teacher = [
+  public studentarray = [
 
     {
       title: 'Complain Box',
@@ -49,6 +49,53 @@ export class UserPage implements OnInit {
       icon: 'list'
     }
   ];
+  public user = [
+
+    {
+      title: 'Complain Box',
+      url: '/user/complain',
+      icon: 'mail'
+    },
+    {
+      title: 'Time Table',
+      url: '/user/timetable',
+      icon: 'clock'
+    },
+  ];
+
+  public adminarray = [
+
+    {
+      title: 'Complain Box',
+      url: '/user/complain',
+      icon: 'mail'
+    },
+    {
+      title: 'Time Table',
+      url: '/user/timetable',
+      icon: 'clock'
+    },
+    {
+      title: 'Attndence',
+      url: '/user/attndence',
+      icon: 'list'
+    },
+    {
+      title: 'Complain List' ,
+      url: '/user/complainList',
+      icon: 'list'
+    },
+    {
+      title: 'Compalain Status',
+      url: '/user/complainStatus',
+      icon: 'checkbox'
+    },
+    {
+      title: 'Users' ,
+      url: '/user/userList',
+      icon: 'people'
+    }
+  ];
 
 
   constructor(public menu: MenuController, public router: Router,
@@ -57,6 +104,7 @@ export class UserPage implements OnInit {
 
   ngOnInit() {
     this.designation = localStorage.getItem('designation');
+    console.log(this.designation);
   }
   initializeApp() {
     this.platform.ready().then(() => {
